@@ -1,0 +1,54 @@
+$margin: 5px;
+
+.paper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &Header {
+        margin: $margin;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        &Button {
+            padding: 1px !important;
+
+            svg {
+                width: 1.2rem !important;
+                height: 1.2rem !important;
+            }
+        }
+    }
+
+    &Title {
+        cursor: move;
+        flex: 1;
+    }
+
+    hr {
+        margin: 0 $margin;
+        width: calc(100% - #{2 * $margin});
+    }
+
+    &Content {
+        flex: 1;
+        margin: $margin;
+    }
+}
+
+.geometry {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+}
+
+:global(.react-resizable-handle) {
+    .geometry & {
+        display: none;
+    }
+    .geometry:hover & {
+        display: block;
+    }
+}
