@@ -76,7 +76,7 @@ interface SingleTileState<T extends TileType> extends BaseTileState {
     type: T;
     data: TileData<T>;
 }
-type TileState = {
+export type TileState = {
     [K in TileType]: SingleTileState<K>;
 }[TileType];
 

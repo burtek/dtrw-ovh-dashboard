@@ -1,0 +1,12 @@
+{
+    "tiles": {
+        "alerts": {
+            "remove": {
+                "title": "Remove tile?",
+                "description": "Are you sure you want to remove tile \"{{ name }}\"?",
+                "cancel": "Cancel",
+                "confirm": "Remove"
+            }
+        }
+    }
+}

@@ -1,15 +1,14 @@
 import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import classNames from 'classnames';
 import { useCallback, useMemo } from 'react';
 import Draggable, { DraggableEventHandler } from 'react-draggable';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ResizableBox, ResizableProps } from 'react-resizable';
-import { AppState } from '../../data';
-import { moveTile, removeTile } from '../../data/tiles';
-import { tiles } from '../../tiles';
+import { moveTile } from '../../data/tiles';
+import { tiles, useTileSelector } from '../../tiles';
 import styles from './styles.module.scss';
 
 function useCallbacks(id: string) {
@@ -28,21 +27,17 @@ function useCallbacks(id: string) {
         },
         [dispatch, id]
     );
-    const onRemove = useCallback(() => {
-        dispatch(removeTile(id));
-    }, [dispatch, id]);
 
     return {
         onStopDrag,
-        onResizeStop,
-        onRemove,
+        onResizeStop
     };
 }
 
-export default function Tile({ id }: TileProps) {
-    const tile = useSelector((state: AppState) => state.tiles.entities[id]!);
+export default function Tile({ id, onRemove }: TileProps) {
+    const tile = useTileSelector(id);
 
-    const { onStopDrag, onResizeStop, onRemove } = useCallbacks(tile.id);
+    const { onStopDrag, onResizeStop } = useCallbacks(tile.id);
 
     const { render: TileContent, name: tileName } = useMemo(
         () => tiles.find(knownTile => knownTile.type === tile.type)!,
@@ -89,7 +84,7 @@ export default function Tile({ id }: TileProps) {
                                 className={styles.paperHeaderButton}
                                 size="small"
                                 color="secondary"
-                                onClick={onRemove}
+                                onClick={() => onRemove(id)}
                             >
                                 <DeleteIcon />
                             </IconButton>
@@ -107,4 +102,5 @@ export default function Tile({ id }: TileProps) {
 
 interface TileProps {
     id: string;
+    onRemove: (id: string) => void;
 }

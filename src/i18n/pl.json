@@ -1,0 +1,12 @@
+{
+    "tiles": {
+        "alerts": {
+            "remove": {
+                "title": "Usunąć kafelek?",
+                "description": "Czy na pewno chcesz usunąć kafelek \"{{ name }}\"?",
+                "cancel": "Anuluj",
+                "confirm": "Usuń"
+            }
+        }
+    }
+}
