@@ -34,15 +34,20 @@ function useCallbacks(id: string) {
     };
 }
 
-export default function Tile({ id, onRemove }: TileProps) {
+export default function Tile({ id, onRemove, onEdit }: TileProps) {
     const tile = useTileSelector(id);
 
     const { onStopDrag, onResizeStop } = useCallbacks(tile.id);
 
-    const { render: TileContent, name: tileName } = useMemo(
-        () => tiles.find(knownTile => knownTile.type === tile.type)!,
+    const foundTile = useMemo(
+        () => tiles.find(knownTile => knownTile.type === tile.type) ?? null,
         [tile.type]
     );
+
+    if (!foundTile) {
+        return null;
+    }
+    const { render: TileContent, name: tileName } = foundTile;
 
     const { x, y, width, height } = tile;
     const handleClassName = `handle-${tile.id}`;
@@ -75,7 +80,7 @@ export default function Tile({ id, onRemove }: TileProps) {
                                 aria-label="edit"
                                 className={styles.paperHeaderButton}
                                 color="primary"
-                                disabled
+                                onClick={() => onEdit(id)}
                             >
                                 <EditIcon />
                             </IconButton>
@@ -102,5 +107,6 @@ export default function Tile({ id, onRemove }: TileProps) {
 
 interface TileProps {
     id: string;
+    onEdit: (id: string) => void;
     onRemove: (id: string) => void;
 }

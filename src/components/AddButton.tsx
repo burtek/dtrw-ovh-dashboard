@@ -6,7 +6,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { useCallback, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTile } from '../data/tiles';
-import { Tile, tiles, TileType } from '../tiles';
+import { TileStrategy, tiles, TileType } from '../tiles';
 import { useBoolean } from '../utils/useBoolean';
 
 const useStyles = makeStyles(theme =>
@@ -33,7 +33,7 @@ export default function AddButton() {
         [dispatch, onClose]
     );
 
-    function mapMenuItem(tile: Tile) {
+    function mapMenuItem(tile: TileStrategy) {
         return (
             <MenuItem onClick={() => onSelectItem(tile.type)} key={tile.type}>
                 {tile.name}

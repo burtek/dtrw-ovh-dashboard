@@ -1,6 +1,14 @@
 {
+    "error": {
+        "tileTypeNotFound": "Kafelki typu \"{{ type }}\" nie są już obsługiwane przez Dashboard. Kafelki tego typu zostały usunięte z Twoich danych."
+    },
     "tiles": {
-        "alerts": {
+        "dialogs": {
+            "edit": {
+                "title": "Edycja kafelka",
+                "cancel": "Anuluj",
+                "confirm": "Zapisz"
+            },
             "remove": {
                 "title": "Usunąć kafelek?",
                 "description": "Czy na pewno chcesz usunąć kafelek \"{{ name }}\"?",

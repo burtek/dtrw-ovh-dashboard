@@ -1,6 +1,14 @@
 {
+    "error": {
+        "tileTypeNotFound": "Tile type \"{{ type }}\" is no longer supported. Your Tiles of this type will be autoremoved from Dashboard."
+    },
     "tiles": {
-        "alerts": {
+        "dialogs": {
+            "edit": {
+                "title": "Editing tile",
+                "cancel": "Cancel",
+                "confirm": "Save"
+            },
             "remove": {
                 "title": "Remove tile?",
                 "description": "Are you sure you want to remove tile \"{{ name }}\"?",

@@ -8,7 +8,7 @@ import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { findTileByType, useTileSelector } from '../tiles';
 
-export function useRememberLast(value: null | string) {
+function useRememberLast(value: null | string) {
     const ref = useRef<string | null>(null);
     if (value !== null && ref.current !== value) {
         ref.current = value;
@@ -46,19 +46,19 @@ export default function RemoveTileDialog({
             aria-describedby="alert-dialog-description"
         >
             <DialogTitle id="alert-dialog-title">
-                {t('tiles.alerts.remove.title')}
+                {t('tiles.dialogs.remove.title')}
             </DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    {t('tiles.alerts.remove.description', { name })}
+                    {t('tiles.dialogs.remove.description', { name })}
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
                 <Button onClick={onCancel} color="primary">
-                    {t('tiles.alerts.remove.cancel')}
+                    {t('tiles.dialogs.remove.cancel')}
                 </Button>
-                <Button onClick={onAccept} color="secondary" autoFocus>
-                    {t('tiles.alerts.remove.confirm')}
+                <Button onClick={onAccept} variant="contained" color="secondary" autoFocus>
+                    {t('tiles.dialogs.remove.confirm')}
                 </Button>
             </DialogActions>
         </Dialog>

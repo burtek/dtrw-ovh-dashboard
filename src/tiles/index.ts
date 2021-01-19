@@ -3,7 +3,7 @@ import type { AppState } from '../data';
 import type { TileState } from '../data/tiles';
 import { dummyTile } from './dummy';
 import { dummy2Tile } from './dummy2';
-import type { Tile as BaseTile } from './Tile';
+import type { BaseTile } from './Tile';
 
 export const tiles = [
     dummyTile,
@@ -19,12 +19,12 @@ export function useTileSelector(id: string | null) {
     return useSelector((state: AppState) => id === null ? null : state.tiles.entities[id as string]!);
 }
 
-export type Tile = typeof tiles[number];
+export type TileStrategy = typeof tiles[number];
 
-export type TileType = Tile['type'];
+export type TileType = TileStrategy['type'];
 
-export type TilesData = {
-    [K in TileType]: Tile extends BaseTile<any, any> | BaseTile<K, infer D>
+type TilesData = {
+    [K in TileType]: TileStrategy extends BaseTile<any, any> | BaseTile<K, infer D>
         ? D
         : never;
 };

@@ -1,9 +1,9 @@
 import assign from 'lodash/assign';
 import cloneDeep from 'lodash/cloneDeep';
-import type { ComponentType } from 'react';
+import type { ComponentType, Dispatch, SetStateAction } from 'react';
 import type { TileGeometry } from '../data/tiles';
 
-export abstract class Tile<Type extends string, Data extends {}> {
+export abstract class BaseTile<Type extends string, Data extends {}> {
     public readonly defaultGeometry: TileGeometry;
     constructor(
         public readonly type: Type,
@@ -29,11 +29,10 @@ export interface RenderProps<Data extends {}> {
 }
 export interface RenderOptionsProps<Data extends {}> {
     id: string;
-    data: Data;
-    saveData: (id: string, data: Data) => void;
+    dataState: [Data, Dispatch<SetStateAction<Data>>]
 }
 
-export type TileDataType<T extends Tile<any, any>> = T extends Tile<string, infer D> ? D : never;
+export type TileDataType<T extends BaseTile<any, any>> = T extends BaseTile<string, infer D> ? D : never;
 
 export function createTileType<Type extends string, Data extends {}>(
     type: Type,
@@ -43,7 +42,7 @@ export function createTileType<Type extends string, Data extends {}>(
     renderOptions: ComponentType<RenderOptionsProps<Data>>,
     defaultGeometry: Partial<TileGeometry> = {}
 ) {
-    return new (class extends Tile<Type, Data> {
+    return new (class extends BaseTile<Type, Data> {
         constructor() {
             super(type, name, defaultGeometry);
         }
@@ -51,5 +50,5 @@ export function createTileType<Type extends string, Data extends {}>(
         public getDefaultData = defaultData instanceof Function ? defaultData : () => cloneDeep(defaultData);
         public render = render;
         public renderOptions = renderOptions;
-    })() as Tile<Type, Data>;
+    })() as BaseTile<Type, Data>;
 }

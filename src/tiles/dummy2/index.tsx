@@ -1,28 +1,30 @@
-import { useState } from "react";
+import DialogContentText from '@material-ui/core/DialogContentText';
+import TextField from '@material-ui/core/TextField';
 import { createTileType } from "../Tile";
+import { useSubState } from "../useSubState";
 
 export const dummy2Tile = createTileType(
-    'DUMMY2',
+    'DUMMY3',
     'DummyTile2',
     { text: '' },
     ({ id, data }) => <p>{id}: {data.text}</p>,
-    ({ id, data, saveData }) => {
-        const [text, setText] = useState(data.text);
-        const onSave = () => saveData(id, { text });
+    function DummyTile2Options({ id, dataState }) {
+        const [text, setText] = useSubState(dataState, 'text');
 
         return (
-            <div>
-                <div>ID 2: {id}</div>
-                <div>
-                    <label htmlFor="dummy-text">Text 2:</label>
-                    <input
-                        id="dummy-text"
-                        value={text}
-                        onChange={event => setText(event.target.value)}
-                    />
-                </div>
-                <button onClick={onSave}>Save</button>
-            </div>
+            <>
+                <DialogContentText>ID 2: {id}.</DialogContentText>
+                <TextField
+                    autoFocus
+                    margin="dense"
+                    id="dummy-text"
+                    label="Text 2"
+                    type="text"
+                    fullWidth
+                    value={text}
+                    onChange={event => setText(event.target.value)}
+                />
+            </>
         );
     }
 );

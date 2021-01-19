@@ -1691,10 +1691,10 @@
     lz-string "^1.4.4"
     pretty-format "^26.6.2"
 
-"@testing-library/jest-dom@^5.11.8":
-  version "5.11.8"
-  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.8.tgz#433a84d6f9a089485101b9e112ef03e5c30bcbfc"
-  integrity sha512-ScyKrWQM5xNcr79PkSewnA79CLaoxVskE+f7knTOhDD9ftZSA1Jw8mj+pneqhEu3x37ncNfW84NUr7lqK+mXjA==
+"@testing-library/jest-dom@^5.11.9":
+  version "5.11.9"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.11.9.tgz#e6b3cd687021f89f261bd53cbe367041fbd3e975"
+  integrity sha512-Mn2gnA9d1wStlAIT2NU8J15LNob0YFBVjs2aEQ3j8rsfRQo+lAs7/ui1i2TGaJjapLmuNPLTsrm+nPjmZDwpcQ==
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@types/testing-library__jest-dom" "^5.9.1"
@@ -1851,20 +1851,25 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
 
-"@types/lodash@^4.14.167":
-  version "4.14.167"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.167.tgz#ce7d78553e3c886d4ea643c37ec7edc20f16765e"
-  integrity sha512-w7tQPjARrvdeBkX/Rwg95S592JwxqOjmms3zWQ0XZgSyxSLdzWaYH3vErBhdVS/lRBX7F8aBYcYJYTr5TMGOzw==
+"@types/lodash@^4.14.168":
+  version "4.14.168"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.168.tgz#fe24632e79b7ade3f132891afff86caa5e5ce008"
+  integrity sha512-oVfRvqHV/V6D1yifJbVRU3TMp8OT6o6BG+U9MkwuJ3U8/CsDHvalRpsxBqivn71ztOFZBTfJMvETbqHiaNSj7Q==
 
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@*", "@types/node@^14.14.20":
+"@types/node@*":
   version "14.14.20"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.20.tgz#f7974863edd21d1f8a494a73e8e2b3658615c340"
   integrity sha512-Y93R97Ouif9JEOWPIUyU+eyIdyRqQR0I8Ez1dzku4hDx34NWh4HbtIc3WNzwB1Y9ULvNGeu5B8h8bVL5cAk4/A==
+
+"@types/node@^14.14.21":
+  version "14.14.21"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.21.tgz#d934aacc22424fe9622ebf6857370c052eae464e"
+  integrity sha512-cHYfKsnwllYhjOzuC5q1VpguABBeecUp24yFluHpn/BQaVxB1CuQ1FSRZCzrPxrkIfWISXV2LbeoBthLWg0+0A==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -5477,6 +5482,11 @@ globby@^6.1.0:
     object-assign "^4.0.1"
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
+
+goober@^2.0.15:
+  version "2.0.25"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.0.25.tgz#c31bfe8489affa715ae31c622ae45e6be99324a5"
+  integrity sha512-/OAAu7hEaakS4Rq934hKWSPE/wnwtUsrUaIpPaCZaGuXW9Ht4dHn3gpJvCjcJkRwK9GCggYvE5qLLt86EB3CrA==
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.4"
@@ -9291,6 +9301,13 @@ react-error-overlay@^6.0.8:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.8.tgz#474ed11d04fc6bda3af643447d85e9127ed6b5de"
   integrity sha512-HvPuUQnLp5H7TouGq3kzBeioJmXms1wHy9EGjz2OURWBp4qZO6AfGEcnxts1D/CbwPLRAgTMPCEgYhA3sEM4vw==
 
+react-hot-toast@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-hot-toast/-/react-hot-toast-1.0.1.tgz#1352a526545f157bc83fbc2b19ac3ad1d92e780e"
+  integrity sha512-og5MNzjNHa7BTjdThj3cwGoyD8tLoxMN9c8/Sme6bBLCnlrF54QrNOJW5gJkETTsuAHVsUK5z8Q6vvkc+9OfCg==
+  dependencies:
+    goober "^2.0.15"
+
 react-i18next@^11.8.5:
   version "11.8.5"
   resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.8.5.tgz#a093335822e36252cda6efc0f55facef6253643f"
@@ -9934,10 +9951,10 @@ sass-loader@8.0.2:
     schema-utils "^2.6.1"
     semver "^6.3.0"
 
-sass@^1.32.2:
-  version "1.32.2"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.2.tgz#66dc0250bc86c15d19ddee7135e93d0cf3d3257b"
-  integrity sha512-u1pUuzqwz3SAgvHSWp1k0mRhX82b2DdlVnP6UIetQPZtYbuJUDaPQhZE12jyjB7vYeOScfz9WPsZJB6Rpk7heA==
+sass@^1.32.4:
+  version "1.32.4"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.4.tgz#308bf29dd7f53d44ae4f06580e9a910ad9aa411e"
+  integrity sha512-N0BT0PI/t3+gD8jKa83zJJUb7ssfQnRRfqN+GIErokW6U4guBpfYl8qYB+OFLEho+QvnV5ZH1R9qhUC/Z2Ch9w==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
